@@ -1,7 +1,7 @@
-name = input("What's your name? ")
+name = input("What's your name? ").strip().title()
 
 #Remove white spaces from str and capitalize
-name = name.strip().title()
+#name = name.strip().title()
 
 #Capitalize the first letter
 #name = name.capitalize()
