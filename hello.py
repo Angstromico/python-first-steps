@@ -1,11 +1,11 @@
 name = input("What's your name? ")
 
-#Remove white spaces from str
-name = name.strip()
+#Remove white spaces from str and capitalize
+name = name.strip().title()
 
 #Capitalize the first letter
 #name = name.capitalize()
-name = name.title()
+#name = name.title()
 
 #print("Hello", name)
 print(f"Hello, {name}")
