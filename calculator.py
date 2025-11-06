@@ -28,20 +28,30 @@ def clean_float(value: float) -> int | float:
     else:
         # 3. If false, return the original float value rounded.
         return round(value, 2)
+    
+def main():
+    # Get the first valid number
+    x = get_valid_number("Enter the first number: ")
 
-# Get the first valid number
-x = get_valid_number("Enter the first number: ")
+    # Get the second valid number
+    y = get_valid_number("Enter the second number: ")
 
-# Get the second valid number
-y = get_valid_number("Enter the second number: ")
+    # Calculate the sum
+    z = clean_float(x + y)
 
-# Calculate the sum
-z = clean_float(x + y)
+    x_to_print = clean_float(x)
+    y_to_print = clean_float(y)
 
-x_to_print = clean_float(x)
-y_to_print = clean_float(y)
+    division = clean_float(x / y)
+    squareX = clean_float(square(x))
+    squareY = clean_float(square(y))
 
-division = clean_float(x / y)
+    print(f"\nThe sum of {x_to_print:,} and {y_to_print:,} is {z:,}")
+    print(f"\nThe division of {x_to_print:,} and {y_to_print:,} is {division:,}")
+    print(f"\nThe square of {x_to_print:,} is {squareX:,}")
+    print(f"\nThe square of {y_to_print:,} is {squareY:,}")
 
-print(f"\nThe sum of {x_to_print:,} and {y_to_print:,} is {z:,}")
-print(f"\nThe division of {x_to_print:,} and {y_to_print:,} is {division:,}")
+def square(n):
+    return n * n
+
+main()
