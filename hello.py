@@ -4,7 +4,8 @@ name = input("What's your name? ")
 name = name.strip()
 
 #Capitalize the first letter
-name = name.capitalize()
+#name = name.capitalize()
+name = name.title()
 
 #print("Hello", name)
 print(f"Hello, {name}")
