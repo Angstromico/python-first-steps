@@ -1,16 +1,10 @@
-def is_valid_number(s: str) -> bool:
-    """Checks if a string can be successfully converted to a float."""
-    try:
-        float(s)
-        return True
-    except ValueError:
-        return False
+import generals
     
 def main():
    x = input("What's x?")
    y = input("What's y?")
 
-   if not is_valid_number(x) or not is_valid_number(y):
+   if not generals.is_valid_number(x) or not generals.is_valid_number(y):
     print("Please enter valid numbers for both inputs.")
     exit(1)
 
