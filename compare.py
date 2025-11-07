@@ -28,4 +28,8 @@ def main():
     print(f"{x} is greater than {y}")
 
 
-main()
+# ----------------------------------------------------------------
+# ONLY RUN main() if this file is the one being executed by the interpreter
+# ----------------------------------------------------------------
+if __name__ == "__main__":
+    main()
