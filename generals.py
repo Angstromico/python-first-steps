@@ -5,3 +5,11 @@ def is_valid_number(s: str) -> bool:
         return True
     except ValueError:
         return False
+    
+def is_integer(s: str) -> bool:
+    """Checks if a string represents an integer."""
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
