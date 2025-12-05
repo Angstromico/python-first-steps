@@ -13,3 +13,7 @@ def is_integer(s: str) -> bool:
         return True
     except ValueError:
         return False
+    
+def is_string(s: str) -> bool:
+    """Checks if a string is a string."""
+    return isinstance(s, str) & len(s) > 0
