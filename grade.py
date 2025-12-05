@@ -1,10 +1,10 @@
-import generals
+from generals import is_valid_number
 
 def main():
     score = input("Enter your score: ")
     
     # Combine validation checks
-    if not (generals.is_valid_number(score) and is_valid_score(score)):
+    if not (is_valid_number(score) and is_valid_score(score)):
         print("Invalid score")
         return
     
