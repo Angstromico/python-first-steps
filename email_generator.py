@@ -8,7 +8,7 @@ def main():
         print("Invalid input. Please enter valid strings for name and domain.")
         return
     
-    email_address = full_name.replace(" ", ".").lower() + "@" + email_domain.lower() + '.com'
+    email_address = full_name.strip().replace(" ", ".").lower() + "@" + email_domain.lower() + '.com'
 
     print("Generated email address:", email_address)
 
