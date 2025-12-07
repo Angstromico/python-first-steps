@@ -16,4 +16,4 @@ def is_integer(s: str) -> bool:
     
 def is_string(s: str) -> bool:
     """Checks if a string is a string."""
-    return isinstance(s, str) & len(s) > 0
+    return isinstance(s, str) and len(s) > 0
