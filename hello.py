@@ -1,28 +1,29 @@
-def main():
-    name = input("What's your name? ")
-    say_hello(name)
-    say_hello()
+from generals import is_string, is_valid_number
 
-#name = input("What's your name? ").strip().title()
+def ask_name() -> str:
+    """Keep asking until we get a valid name."""
+    while True:
+        name = input("What's your name? ").strip().title()
 
-#Remove white spaces from str and capitalize
-#name = name.strip().title()
+        if not is_string(name):
+            print("❌ Invalid name provided. Please enter text.")
+            continue
+        if is_valid_number(name):
+            print("❌ Name cannot be a number. Try again.")
+            continue
 
-#Capitalize the first letter
-#name = name.capitalize()
-#name = name.title()
+        return name
 
-# say_hello(name)
-# say_hello()
-
-def say_hello(name="Manuel Morales"):
-    parts = name.split() 
-    #Split user name into main name and lastname
-    first_name = name.split(" ")[0]
+def say_hello(name: str = "Manuel Morales") -> None:
+    parts = name.split()
+    first_name = parts[0]
     last_name = parts[1] if len(parts) > 1 else ""
-    #print("Hello", name)
     print(f"Hello, {first_name} {last_name}")
 
-main()
+def main():
+    name = ask_name()
+    say_hello(name)
+    say_hello()  # default greeting
 
-# This my first step into Python
+if __name__ == "__main__":
+    main()
