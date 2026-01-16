@@ -17,3 +17,9 @@ def is_integer(s: str) -> bool:
 def is_string(s: str) -> bool:
     """Checks if a string is a string."""
     return isinstance(s, str) and len(s) > 0
+
+def text_to_number(text: str) -> int:
+    """Converts a string to a number."""
+    if not is_valid_number(text):
+        raise ValueError("Invalid number")
+    return int(text)
