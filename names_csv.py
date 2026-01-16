@@ -21,7 +21,7 @@ def main():
             print("Error: please enter a valid number.")
             continue
 
-        n = int(text_to_number(n))
+        n = text_to_number(n)
         if n <= 0:
             print("Error: number must be greater than 0.")
             continue
