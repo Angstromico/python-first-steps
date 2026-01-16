@@ -1,4 +1,5 @@
 import csv
+import os
 from generals import is_valid_number, text_to_number
 
 
@@ -27,9 +28,16 @@ def main():
 
         break
 
+    file_exists = os.path.exists("pupils.csv")
+    file_is_empty = not file_exists or os.stat("pupils.csv").st_size == 0
+
     # Write pupils to CSV
     with open("pupils.csv", "a", newline="") as file:
         writer = csv.writer(file)
+
+        # Write headers only once
+        if file_is_empty:
+            writer.writerow(["Name", "Engineering"])
 
         for _ in range(n):
             name = input("Pupil full name: ").strip()
@@ -60,9 +68,9 @@ def main():
     # Read pupils from CSV
     print("\n📋 Pupils list:")
     with open("pupils.csv", "r") as file:
-        reader = csv.reader(file)
+        reader = csv.DictReader(file)
         for row in reader:
-            print(f"- {row[0]} — {row[1]}")
+            print(f"- {row['Name']} — {row['Engineering']}")
 
 
 if __name__ == "__main__":
